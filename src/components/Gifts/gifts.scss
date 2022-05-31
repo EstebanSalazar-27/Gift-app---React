@@ -1,0 +1,71 @@
+
+.gifts-list__gift-card{
+    cursor: pointer;
+    position: relative;
+    animation: 300ms out-in 1 backwards;
+    
+    &:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.289);
+        opacity: 0;
+        transition: all 200ms ease;
+    }
+        &:hover{
+            &:before{
+                opacity: 1;
+            }
+        }
+}
+@keyframes out-in {
+    from{
+        transform: translateX(-2000px);
+    }
+    to{
+        transform: translateX(unset);
+    }
+    
+}
+.gift-card__info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 10px;
+    padding: 0 .3rem;
+    z-index: 10;
+}
+.gift-card__title{
+   
+    padding: .2rem .2rem;
+    color: white;
+    background-color: rgba(0, 119, 255, 0.474);
+    border-radius: 2px;
+    
+}
+.gift-card__rating-cont{
+    background-color: rgb(255, 106, 52);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.gift-card__rating{  
+    color: white;
+    font-weight: 600;
+    font-size: .8rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    margin-bottom: .5em;
+}
