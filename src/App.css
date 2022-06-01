@@ -7,6 +7,18 @@ ul,a{
   list-style: none;
   text-decoration: none;
 }
+a{
+  display: block;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
+}
+img{
+  padding: 0;
+  margin: 0;
+  display: block;
+}
 .wrapper-layout{
   width: 70%;
   margin: 0 auto;

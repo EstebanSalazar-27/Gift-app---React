@@ -4,12 +4,9 @@
 export const Gifts = ({title,url,rating,id,idx}) =>{
     
 
-    const style={
-        animationDelay: `${idx * 50}ms`,
-        transformOrigin: "left"
-    }
+   
     return(
-        <div className='gifts-list__gift-card' style={style}>
+        <a href={`#${title}`} className='gifts-list__gift-card'>
             <img className='gift-card__img-gift' src={url} alt={title} />
             <div className='gift-card__info'>
                 {title ? <h6 className='gift-card__title'>{title}</h6> :  <h6 className='gift-card__title'>{id}</h6>  }
@@ -19,6 +16,6 @@ export const Gifts = ({title,url,rating,id,idx}) =>{
                
             </div>
      
-        </div>
+        </a>
     )
 }

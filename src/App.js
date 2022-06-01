@@ -1,40 +1,28 @@
 import "./App.css"
 import React, { useState, useEffect } from 'react';
 
+// Wooter routes
+import { Route } from "wouter";
 // Components
-import {getGifts} from "./helpers/getGifts"
+
 import { ListOfGifts } from "./components/ListOfGifts/ListOfGifts";
 import {Navbar} from "./components/Navbar/Navbar"
+import { Spinner } from "./components/Spinner/Spinner";
 function App() {
-const [gifts, setGifts] = useState([])
 const [loading, setLoading] = useState(true)
 
-
-
- 
-  
-
-useEffect(()=>{
+useEffect(()=> {
   setInterval(() => {
-   setLoading(false)
-  }, 500);
-  getGifts(30,0,"rick and morty").then(data => setGifts(data))
-  
-},[])
-
-
-
+    setLoading(false)
+   }, 1000);
+}, [])
+ 
   return (
     <div className="App">
-
       <div className="wrapper-layout">
          <Navbar/>
-         { loading ? <h2>Loading...</h2> :<ListOfGifts gifts={gifts} />}
+         { loading ? <Spinner/> : <Route component={ListOfGifts}  path="/gifts/:keyword"/> }
       </div>
-    
-   
-
-
     </div>
   );
 }

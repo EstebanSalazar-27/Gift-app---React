@@ -2,8 +2,6 @@
 .gifts-list__gift-card{
     cursor: pointer;
     position: relative;
-    animation: 300ms out-in 1 backwards;
-    
     &:before{
         content: "";
         position: absolute;
@@ -19,15 +17,7 @@
             }
         }
 }
-@keyframes out-in {
-    from{
-        transform: translateX(-2000px);
-    }
-    to{
-        transform: translateX(unset);
-    }
-    
-}
+
 .gift-card__info{
     width: 100%;
     display: flex;
