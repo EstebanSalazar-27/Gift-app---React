@@ -4,12 +4,12 @@ import useGifts from '../../hooks/useGifts';
 
 
 
-export const SearchResults = (props)=>{
-   
-    
-    return(
-        <div>
-          <ListOfGifts {...props}/>
-        </div>
-    )
+export const SearchResults = (props) => {
+
+
+  return (
+    <div>
+      <ListOfGifts {...props} />
+    </div>
+  )
 }

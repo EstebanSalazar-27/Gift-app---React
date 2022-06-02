@@ -10,14 +10,14 @@ import { Navbar } from '../../components/Navbar/Navbar';
 import { useLocation } from 'wouter';
 
 
-export const Home  = (props) =>{
-  
-    
-    return(
+export const Home = (props) => {
+
+
+    return (
         <div className='home-page'>
-            <Banner/>
+            <Banner />
             <ListOfGifts />
-            
+
         </div>
     )
 }

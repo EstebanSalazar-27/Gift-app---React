@@ -6,7 +6,7 @@ export const Navbar = () => {
     const [scrollY, setScrollY] = useState(0)
 
     // Handle navbar depending of scroll value
-    const handleNavbar = `${scrollY >100 ? "sticky" : ""}`
+    const handleNavbar = `${scrollY > 100 ? "sticky" : ""}`
     // Tracking scroll 
     const trackingScroll = () => setScrollY(window.pageYOffset)
     window.addEventListener("scroll", trackingScroll)
@@ -26,7 +26,7 @@ export const Navbar = () => {
                 <li><Link to="/category/gifts" className='navbar-menu__item-link'>Gifts</Link></li>
                 <li><Link to="/category/sports" className='navbar-menu__item-link'>Sports</Link></li>
                 <li><Link to="/category/trending" className='navbar-menu__item-link' >Trending</Link></li>
-                <li><Link to="/category/fun"className='navbar-menu__item-link'>Fun</Link></li>
+                <li><Link to="/category/fun" className='navbar-menu__item-link'>Fun</Link></li>
             </ul>
             <button className='navbar__btn-menu'>
                 <span className='line'></span>

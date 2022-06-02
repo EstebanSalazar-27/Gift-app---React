@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import "./styles.scss"
 
 
-export const Spinner = () =>{
+export const Spinner = () => {
 
 
-    return(
+    return (
         <div className='spinner'>
 
         </div>

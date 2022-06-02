@@ -1,11 +1,11 @@
- import React, { useState, useEffect } from 'react';
- import logo from "./pride-banner.gif"
+import React, { useState, useEffect } from 'react';
+import logo from "./pride-banner.gif"
 
-export const Banner = () =>{
+export const Banner = () => {
 
-    return(
+    return (
         <div className='home__banner'>
-              <img src={logo} alt="" className='banner'/> 
+            <img src={logo} alt="" className='banner' />
         </div>
     )
 }
