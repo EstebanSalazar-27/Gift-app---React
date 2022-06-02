@@ -3,6 +3,9 @@
   min-height: 100vh;
   background-color: rgb(18, 21, 27);
 }
+:root{
+  --border-radius: 2px;
+}
 ul,a{
   list-style: none;
   text-decoration: none;
@@ -19,8 +22,18 @@ img{
   margin: 0;
   display: block;
 }
+input,button{
+  border: none;
+  outline: none;
+}
 .wrapper-layout{
   width: 70%;
   margin: 0 auto;
   
+}
+
+@media (max-width:768px){
+  .wrapper-layout{
+    width: 80%;
+  }
 }

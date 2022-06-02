@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./styles.scss"
 import SvgComponent from './SvgComponent';
+import { Link } from 'wouter';
 export const Navbar = () => {
     const [scrollY, setScrollY] = useState(0)
 
@@ -18,19 +19,15 @@ export const Navbar = () => {
         <nav className={`navbar ${handleNavbar}`}>
             <div className='navbar__cont-hero'>
                 <SvgComponent />
-                <h1 className='navbar__brand'>Giphy</h1>
+                <Link to="/" className='navbar__brand'>GIPHY</Link>
             </div>
-
-
             <ul className='navbar__menu'>
-                <li><a className='navbar-menu__item-link' href="/gifts/giphy">Home</a></li>
-                <li><a className='navbar-menu__item-link' href="/gifts/gifts">Gifts</a></li>
-                <li><a className='navbar-menu__item-link' href="/gifts/sports">Sports</a></li>
-                <li><a className='navbar-menu__item-link' href="/gifts/trending">Trending</a></li>
-                <li><a className='navbar-menu__item-link' href="/gifts/fun">Fun</a></li>
+                <li><Link to="/" className='navbar-menu__item-link'>Home</Link></li>
+                <li><Link to="/category/gifts" className='navbar-menu__item-link'>Gifts</Link></li>
+                <li><Link to="/category/sports" className='navbar-menu__item-link'>Sports</Link></li>
+                <li><Link to="/category/trending" className='navbar-menu__item-link' >Trending</Link></li>
+                <li><Link to="/category/fun"className='navbar-menu__item-link'>Fun</Link></li>
             </ul>
-
-
             <button className='navbar__btn-menu'>
                 <span className='line'></span>
                 <span className='line'></span>
