@@ -2,8 +2,8 @@ import * as React from "react"
 
 const SvgComponent = (props) => (
   <svg
-    height={33}
-    width={33}
+    height={30}
+    width={30}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="4 2 16.32 20"
     {...props}

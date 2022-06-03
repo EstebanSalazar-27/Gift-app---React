@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./styles.scss"
+import "./navbar.scss"
 import SvgComponent from './SvgComponent';
 import { Link } from 'wouter';
 export const Navbar = () => {
@@ -11,9 +11,10 @@ export const Navbar = () => {
     const trackingScroll = () => setScrollY(window.pageYOffset)
     window.addEventListener("scroll", trackingScroll)
 
+   
     useEffect(() => {
 
-    }, [scrollY])
+    }, [])
 
     return (
         <nav className={`navbar ${handleNavbar}`}>

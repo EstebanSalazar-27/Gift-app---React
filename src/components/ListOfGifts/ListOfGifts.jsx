@@ -1,24 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import "./listOfGifts.scss"
 // Components
 import { Gifts } from '../Gifts/Gifts';
 import { getGifts } from "../../helpers/getGifts"
 import { Spinner } from '../Spinner/Spinner';
 import useGifts from '../../hooks/useGifts';
+import { HeaderForSearched } from '../HeadingResults/HeadingResultsSearch';
+import { SearchBarContext } from '../../context/context';
 
-export const ListOfGifts = ({ params = { keyword: "perro" } }) => {
+export const ListOfGifts = ({ params = { keyword: "random" } }) => {
     const { keyword } = params
-    const { gifts, loading } = useGifts({ keyword })
+    const { gifts, loading, lastSearch } = useGifts({ keyword })
+    const { searchValue,isSearching,setIsSearching} = useContext(SearchBarContext)
+    
 
+
+
+    
     if (loading) {
         return <Spinner />
     }
+
     return (
         <div className='listOfGifts-Results'>
-            <div className='busquedas-titles'>
-                <h2 className="title-search">Busqueda: {keyword}</h2>
-                <h5 className='title-results'>(results {gifts.length})</h5>
-            </div>
+            {
+                isSearching
+                    &&
+                    <HeaderForSearched keyword={keyword} gifts={gifts} />      
+            }
             <section className='gifts-list'>
                 {gifts.map((el, idx) => <Gifts
                     key={el.id}
