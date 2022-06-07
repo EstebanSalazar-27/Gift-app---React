@@ -1,10 +1,7 @@
 import React,{useState} from "react"
 
 
-export const SearchBarContext = React.createContext({
-    valueSearch: "",
-    provider:false
-})
+export const SearchBarContext = React.createContext({})
 
 export default function SearchProvider({children}){
     const [searchValue, setSearchValue] = useState("")

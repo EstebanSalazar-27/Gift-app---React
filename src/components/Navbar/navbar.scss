@@ -8,6 +8,7 @@
     justify-content: space-between;
     margin-bottom: 2rem;
     z-index: 100;
+   
 }
 
 // Sticky nav
@@ -18,7 +19,6 @@
     position: sticky;
     top: 0;
     animation: out-in 600ms 1;
-
     .navbar__cont-hero {
         animation: out-in 500ms 250ms 1 ease forwards;
         opacity: 0;
@@ -26,27 +26,17 @@
     }
 }
 
-@keyframes out-in {
-    from {
-        opacity: 0;
-        transform: translateY(-500px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(unset);
-    }
-}
 
 .navbar__menu {
     display: flex;
     flex-direction: row;
-    gap: 1.5rem;
+    gap: 1.5rem; 
 }
 
 .navbar__cont-hero {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: .5rem;
 }
 
@@ -67,7 +57,6 @@
         width: 100%;
         height: 3px;
         border-radius: 1px;
-
     }
 }
 
@@ -89,6 +78,8 @@
     color: white;
     display: none;
     cursor: pointer;
+  
+    z-index: 200;
 }
 
 @media (max-width: 768px) {
@@ -96,11 +87,16 @@
         animation: appear-btn 1000ms 1;
         display: flex;
     }
-
-    .navbar__menu {
+    .navbar__menu{
         display: none;
     }
+    .isVisible{
+        display: flex;
+        flex-direction: column;
+    }
+   
 }
+
 
 
 /// Keyframes
@@ -112,5 +108,17 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes out-in {
+    from {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(unset);
     }
 }

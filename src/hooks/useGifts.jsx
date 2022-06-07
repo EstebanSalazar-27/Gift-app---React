@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { getGifts } from '../helpers/getGifts';
+import { GiftsContext } from '../context/giftsContext';
 
-
-export default function useGifts({keyword}){
+export default function useGifts({ keyword } = {keyword:null}) {
+    const { gifts, setGifts } = useContext(GiftsContext)
     const [loading, setLoading] = useState(false)
-    const [gifts, setGifts] = useState([])
     const [lastSearch, setLastSearch] = useState("")
-    const [ historySearch, setHistorySearch] = useState([])
     useEffect(() => {
         setLoading(true)
         const keywordToUse = keyword || localStorage.getItem("lastKeyword")
         const historyKeyword = localStorage.getItem("HistorySearch")
-        setLastSearch(keywordToUse)    
+        setLastSearch(keywordToUse)
         getGifts(50, 0, keyword).then(data => {
             setGifts(data)
             setLoading(false)
-            localStorage.setItem("lastKeyword", [keyword])
-            localStorage.setItem("HistorySearch", keyword)
+            localStorage.setItem("lastKeyword", keyword)
+            localStorage.setItem("HistorySearch", keyword)    
         })
-    }, [keyword])
-    return {loading, gifts,lastSearch}
+    }, [keyword, setGifts])
+    return { loading, gifts, lastSearch }
 }

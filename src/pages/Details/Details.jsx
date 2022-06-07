@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useRoute } from 'wouter';
-import useGifts from '../../hooks/useGifts';
+import {Gifts} from "../../components/Gifts/Gifts"
+import { GiftsContext } from '../../context/giftsContext';
+import { GiftDetail } from './GiftDetail/GiftDetail';
 
-export const Details = ({ params }) => {
-
+export const Details = ({params}) => {
+    const {gifts} = useContext(GiftsContext)
+    
+    
+        const gift = gifts.find(gift => gift.id === params.id )
+       
+    
+   
     return (
         <div>
-            <h2>Hola mundo</h2>
+          <GiftDetail {...gift} />
         </div>
     )
 }

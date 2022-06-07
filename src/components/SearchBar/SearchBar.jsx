@@ -6,12 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Context
 import { SearchBarContext } from '../../context/context';
-export const SearchBar = ({ params }) => {
+export const SearchBar = (params) => {
     const [keyword, setKeyword] = useState("");
     const [path, pushLocation] = useLocation();
-    const {searchValue,setSearchValue,isSearching, setIsSearching} = useContext(SearchBarContext)   
-   console.log(isSearching)
-   
+    const {setSearchValue, setIsSearching} = useContext(SearchBarContext)   
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
