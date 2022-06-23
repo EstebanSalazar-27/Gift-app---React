@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import "./navbar.scss"
 import SvgComponent from './SvgComponent';
 import { Link } from 'wouter';
 export const Navbar = () => {
+    console.log("nav")
     const [scrollY, setScrollY] = useState(0)
-    const [menuIsVisible, setMenuIsVisible] =  useState(false)
+    const [menuIsVisible, setMenuIsVisible] = useState(false)
     // Handle navbar depending of scroll value
     const handleNavbar = `${scrollY > 100 ? "sticky" : ""}`
     // Tracking scroll 
-    const trackingScroll = () => setScrollY(window.pageYOffset)
+    const trackingScroll = () => {
+        setScrollY(window.pageYOffset)
+    }
     window.addEventListener("scroll", trackingScroll)
 
     // Mobile Menu 
 
     const handleMenu = `${menuIsVisible ? "isVisible" : "isHidde"}`
-    const HandleMenuMobile = () =>{
+    const HandleMenuMobile = () => {
         setMenuIsVisible(!menuIsVisible)
     }
-
-    useEffect(() => {
-
-    }, [])
 
     return (
         <nav className={`navbar ${handleNavbar}`}>
@@ -43,7 +42,7 @@ export const Navbar = () => {
                 <span className='line'></span>
                 <span className='line'></span>
             </button>
-            
+
         </nav>
     )
 }

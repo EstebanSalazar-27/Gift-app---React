@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext,memo } from 'react';
 import "./listOfGifts.scss"
 // Components
 import { Gifts } from '../Gifts/Gifts';
@@ -7,9 +7,10 @@ import useGifts from '../../hooks/useGifts';
 import { HeaderForSearched } from '../HeadingResults/HeadingResultsSearch';
 import { SearchBarContext } from '../../context/context';
 
-export const ListOfGifts = ({ params = { keyword: "giphy" } }) => {
+export const ListOfGifts = memo(({ params = { keyword: "giphy" } }) => {
     const { keyword } = params
     const { gifts, loading, lastSearch } = useGifts({ keyword })
+    console.log("gifts")
 
     if (loading) {
         return <Spinner />
@@ -23,7 +24,7 @@ export const ListOfGifts = ({ params = { keyword: "giphy" } }) => {
 
                 {gifts.length <= 0 
                     ?
-                    <h2>reto</h2>
+                    <h2>testing</h2>
                     :
                     <>
                         {gifts.map((el, idx) => <Gifts
@@ -43,4 +44,4 @@ export const ListOfGifts = ({ params = { keyword: "giphy" } }) => {
         </div>
 
     )
-}
+})

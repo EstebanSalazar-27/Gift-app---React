@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, memo } from 'react';
 import "./searchbar.scss"
 import { Link, useLocation } from 'wouter';
 // Font Awesome
@@ -6,10 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Context
 import { SearchBarContext } from '../../context/context';
-export const SearchBar = (params) => {
+export const SearchBar = memo((params) => {
     const [keyword, setKeyword] = useState("");
     const [path, pushLocation] = useLocation();
-    const {setSearchValue, setIsSearching} = useContext(SearchBarContext)   
+    const { setSearchValue, setIsSearching } = useContext(SearchBarContext)
+    console.log("searchbar")
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
@@ -19,9 +20,9 @@ export const SearchBar = (params) => {
     }
     const handleInput = (evt) => {
         setKeyword(evt.target.value)
-       
+
     }
-    
+
     useEffect(() => {
         setSearchValue(keyword)
     }, [keyword]);
@@ -39,8 +40,8 @@ export const SearchBar = (params) => {
                     autoFocus='none'
                 />
                 {keyword && <input type="submit" value="Search" className='searchbar-submit-btn' />}
-                
+
             </form>
         </div>
     )
-}
+})
