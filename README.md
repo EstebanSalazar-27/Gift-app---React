@@ -1,5 +1,10 @@
+// Home path
 ![](images/home.png)
+
+// Details path
 ![](images/details.png)
+
+// Search path
 ![](images/search.png)
 
 # Getting Started with Create React App
